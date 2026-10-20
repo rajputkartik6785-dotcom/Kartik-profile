@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PortScout Scanner</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main class="container">
+        <h1>PortScout<span>.</span></h1>
+        <p>Simple TCP Port Scanner</p>
+
+        <form id="scanForm">
+            <label for="host">Private IP Address</label>
+            <input id="host" value="127.0.0.1" required>
+
+            <div class="ports">
+                <div>
+                    <label for="start">Start Port</label>
+                    <input id="start" type="number" min="1"
+                           max="65535" value="1" required>
+                </div>
+                <div>
+                    <label for="end">End Port</label>
+                    <input id="end" type="number" min="1"
+                           max="65535" value="100" required>
+                </div>
+            </div>
+
+            <button id="scanButton">Start Scan</button>
+        </form>
+
+        <p id="message">Ready to scan localhost.</p>
+
+        <table>
+            <thead>
+                <tr><th>Port</th><th>Status</th></tr>
+            </thead>
+            <tbody id="results">
+                <tr><td colspan="2">No results yet.</td></tr>
+            </tbody>
+        </table>
+
+        <button id="exportButton" type="button" disabled>
+            Export CSV
+        </button>
+
+        <p class="note">
+            Scan only localhost or private systems you own
+            or have permission to test.
+        </p>
+    </main>
+</body>
+</html>
